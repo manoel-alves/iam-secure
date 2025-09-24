@@ -16,7 +16,7 @@
     </description>
 
     <modules>
-        <!-- Services -->
+        <module>services/discovery-service</module>
     </modules>
 
     <properties>
