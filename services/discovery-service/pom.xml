@@ -16,11 +16,36 @@
     <name>discovery-service</name>
     <description>Discovery Service</description>
 
+    <properties>
+        <eureka-core.version>2.0.5</eureka-core.version>
+    </properties>
+
     <dependencies>
         <!-- Eureka Server -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <exclusions>
+                <exclusion> <!-- CVE-2025-48924 -->
+                    <groupId>com.netflix.eureka</groupId>
+                    <artifactId>eureka-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency> <!-- Eureka server Dependency -->
+            <groupId>com.netflix.eureka</groupId>
+            <artifactId>eureka-core</artifactId>
+            <version>${eureka-core.version}</version>
+            <exclusions>
+                <exclusion> <!-- CVE-2025-48924 -->
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency> <!-- CVE-2025-48924 -->
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 

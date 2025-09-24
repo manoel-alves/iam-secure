@@ -28,6 +28,9 @@
         <jacoco.version>0.8.13</jacoco.version>
         <lombok.version>1.18.42</lombok.version>
 
+        <!-- CVE mitigation Safe Versions -->
+        <commons-lang3.version>3.18.0</commons-lang3.version>
+
         <!-- Build encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -61,6 +64,12 @@
                 <scope>test</scope>
             </dependency>
 
+            <!-- CVE mitigation Dependencies -->
+            <dependency> <!-- CVE-2025-48924 -->
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
