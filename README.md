@@ -74,7 +74,7 @@ The system is built with microservices architecture, enabling modular developmen
 ### Observability & Logging:
 |             Component             | Version |
 |:---------------------------------:|:-------:|
-| Spring Boot Actuator / Micrometer |  3.5.5  |
+| Spring Boot Actuator / Micrometer |  3.5.6  |
 
 ---
 
