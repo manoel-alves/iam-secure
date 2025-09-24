@@ -30,6 +30,7 @@
 
         <!-- CVE mitigation Safe Versions -->
         <commons-lang3.version>3.18.0</commons-lang3.version>
+        <xstream.version>1.4.21</xstream.version>
 
         <!-- Build encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -69,6 +70,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency> <!-- CVE-2024-47072 -->
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>${xstream.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

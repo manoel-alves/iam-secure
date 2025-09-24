@@ -30,9 +30,14 @@
                     <groupId>com.netflix.eureka</groupId>
                     <artifactId>eureka-core</artifactId>
                 </exclusion>
+                <exclusion> <!-- CVE-2024-47072 -->
+                    <groupId>com.thoughtworks.xstream</groupId>
+                    <artifactId>xstream</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
-        <dependency> <!-- Eureka server Dependency -->
+        <!-- Eureka server Dependency -->
+        <dependency>
             <groupId>com.netflix.eureka</groupId>
             <artifactId>eureka-core</artifactId>
             <version>${eureka-core.version}</version>
@@ -46,6 +51,10 @@
         <dependency> <!-- CVE-2025-48924 -->
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency> <!-- CVE-2024-47072 -->
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
         </dependency>
     </dependencies>
 
