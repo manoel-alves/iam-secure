@@ -65,6 +65,12 @@
             <artifactId>httpclient</artifactId>
         </dependency>
 
+        <!-- parent dependencies:
+        spring-boot-starter-test
+        spring-boot-starter-actuator
+        lombok
+        spring-boot-devtools
+        -->
     </dependencies>
 
 </project>
