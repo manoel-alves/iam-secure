@@ -17,11 +17,29 @@
     <description> Configuration service</description>
 
     <dependencies>
+        <!-- spring-cloud-config-server -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
+            <exclusions>
+                <exclusion> <!-- CVE-2020-36843 -->
+                    <groupId>net.i2p</groupId>
+                    <artifactId>i2p</artifactId>
+                </exclusion>
+                <exclusion> <!-- CVE-2020-36843 -->
+                    <!-- Not patched yet | Cryptography related -->
+                    <groupId>net.i2p.crypto</groupId>
+                    <artifactId>eddsa</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency> <!-- CVE-2020-36843 -->
+            <groupId>net.i2p</groupId>
+            <artifactId>i2p</artifactId>
+            <version>2.8.0</version>
         </dependency>
 
+        <!-- eureka-client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
