@@ -4,6 +4,11 @@ server:
 spring:
     application:
         name: config-service
+    cloud:
+        config:
+            server:
+                native:
+                    search-locations: file:../../../../infra/config-repo
 
 eureka:
     client:
