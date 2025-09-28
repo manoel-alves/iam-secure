@@ -17,6 +17,7 @@
 
     <modules>
         <module>services/discovery-service</module>
+        <module>services/config-service</module>
     </modules>
 
     <properties>
@@ -32,6 +33,8 @@
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <xstream.version>1.4.21</xstream.version>
         <httpclient.version>4.5.14</httpclient.version>
+        <i2p.version>2.8.0</i2p.version>
+        <guava.version>33.5.0-jre</guava.version>
 
         <!-- Build encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -82,7 +85,16 @@
                 <artifactId>httpclient</artifactId>
                 <version>${httpclient.version}</version>
             </dependency>
-
+            <dependency> <!-- CVE-2020-36843 -->
+                <groupId>net.i2p</groupId>
+                <artifactId>i2p</artifactId>
+                <version>${i2p.version}</version>
+            </dependency>
+            <dependency> <!-- CVE-2018-10237 | CVE-2023-2976 | CVE-2020-8908 -->
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
