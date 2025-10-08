@@ -17,6 +17,11 @@
     <description>Gateway Service</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
         <!-- parent dependencies:
         spring-boot-starter-test
         spring-boot-starter-actuator
